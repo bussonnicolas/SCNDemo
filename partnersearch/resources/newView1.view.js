@@ -44,11 +44,6 @@ sap.ui.jsview("partnersearch.resources.newView1", {
     	
  
      	 oTable.addColumn(new sap.ui.table.Column({
-    	 	label: new sap.ui.commons.Label({text:oBundle.getText("PARTNER_TYPE")}),
- 			template: new sap.ui.commons.TextView().bindProperty("text", "Type"),
- 		}));
-
-     	 oTable.addColumn(new sap.ui.table.Column({
     	 	label: new sap.ui.commons.Label({text:oBundle.getText("PARTNER_PARTNERNO")}),
  			template: new sap.ui.commons.TextView().bindProperty("text", "PartnerNo"),
  		}));
