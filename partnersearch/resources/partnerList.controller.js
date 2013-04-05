@@ -7,7 +7,8 @@ sap.ui.controller("partnersearch.resources.partnerList", {
 	 */
 	onInit: function() {
 		
-		var serviceUrl = this.getUrl("/sap/opu/odata/sap/Z_PARTNER_SRV_SRV/?sap-client=001");
+		jQuery.sap.require("partnersearch.resources.utils.connectivity");
+		
 		var oModel = new sap.ui.model.odata.ODataModel(serviceUrl,true);
 		sap.ui.getCore().setModel(oModel);
 		
@@ -72,7 +73,7 @@ sap.ui.controller("partnersearch.resources.partnerList", {
 		
 		var oTable = sap.ui.getCore().byId("ID_PartnerTable");
 		oTable.setModel(oModel);
-		oTable.bindRows("PartnerSet");
+		oTable.bindRows("/PartnerSet");
 	},
 
 	/**
@@ -87,16 +88,8 @@ sap.ui.controller("partnersearch.resources.partnerList", {
 		};
 					
 		view.getController().loadContent(this.getBindingContext());
-	},
+	}
 	
-	getUrl:function(sUrl){
-		if(sUrl == ""){
-		return sUrl;}
-		if(window.location.hostname == "localhost"){
-		return "proxy" + sUrl; }
-	 else{
-		return sUrl;
-		}
-		}
+
 
 });
