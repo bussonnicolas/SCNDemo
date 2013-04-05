@@ -9,7 +9,7 @@ sap.ui.controller("partnersearch.resources.partnerList", {
 		
 		jQuery.sap.require("partnersearch.resources.utils.connectivity");
 		
-		var oModel = new sap.ui.model.odata.ODataModel(serviceUrl,true);
+		var oModel = new sap.ui.model.odata.ODataModel(serviceUrl,true,"bcuser","zenzen01");
 		sap.ui.getCore().setModel(oModel);
 		
 //		oModel.attachRequestCompleted(function(oEvent){
