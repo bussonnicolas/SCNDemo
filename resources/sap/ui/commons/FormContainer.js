@@ -1,6 +1,0 @@
-/*!
- * SAP UI development toolkit for HTML5 (SAPUI5)
- * 
- * (c) Copyright 2009-2012 SAP AG. All rights reserved
- */
-jQuery.sap.declare("sap.ui.commons.FormContainer");jQuery.sap.require("sap.ui.commons.library");jQuery.sap.require("sap.ui.core.Element");sap.ui.core.Element.extend("sap.ui.commons.FormContainer",{metadata:{library:"sap.ui.commons",properties:{"type":{type:"sap.ui.commons.FormContainerType",group:"Appearance",defaultValue:sap.ui.commons.FormContainerType.Border},"expanded":{type:"boolean",group:"Misc",defaultValue:true}},aggregations:{"formElements":{type:"sap.ui.commons.FormElement",multiple:true,singularName:"formElement"},"title":{type:"sap.ui.commons.Title",altTypes:["string"],multiple:false}},associations:{"layout":{type:"sap.ui.commons.FormLayout",multiple:false}}}});(function(){sap.ui.commons.FormContainer.prototype.getLayout=function(){var l=this.getAssociation("layout");if(!l){var p=this.getParent();if(p&&(p instanceof sap.ui.commons.Form||p instanceof sap.ui.commons.FormContainer)){l=p.getLayout()}}return l};sap.ui.commons.FormContainer.prototype.setLayout=function(l){var o=this.getAssociation("layout");if(o){var L=sap.ui.getCore().byId(o);this.removeDelegate(L)}this.setAssociation("layout",l);var n=this.getAssociation("layout");if(n){L=sap.ui.getCore().byId(n);this.addDelegate(L)}return this}}());
